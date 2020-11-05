@@ -21,7 +21,12 @@ const UserSchema = new Schema({
   token_at:{
     type: Date,
     required: true,
-  },history_id:{
+  },
+  token:{
+    type: String,
+    required: true,
+  },
+  history_id:{
     type: String,
     default: uuid.v4
   }

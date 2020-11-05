@@ -19,7 +19,7 @@ router.route("/add").post((req, res) => {
     const username = req.body.username;
     const userpassword = req.body.password;
     const token_at= req.body.created_time;
-    
-    const newUser = new User({usermail,username,userpassword,token_at});
+    const token = req.body.token;
+    const newUser = new User({usermail,username,userpassword,token_at,token});
     newUser.save().then(() => res.json("Created new Account Thank you "+ username)).catch(err => res.status(400).json("error: " + err))
 });
